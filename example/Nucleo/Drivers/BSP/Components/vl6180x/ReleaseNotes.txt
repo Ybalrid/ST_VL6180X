@@ -1,0 +1,70 @@
+########################################################
+# ReleaseNotes: 3.0.0
+########################################################
+
+* New API function for asynchronous operations (free-running) with sample code added : VL6180x_RangeGetMeasurementIfReady()
+* New API function to enable/disable Dmax computaion : VL6180x_DMaxSetState() 
+* ECE disabled (by default) when scaling factor is 2 or 3 (proximity configuration)
+* Dmax formula upgraded to adapt to xTalk compensation
+* WAF improvement for mid/high xTalk values
+* Docmentation updated (VL6180x_RangeGetMeasurementIfReady function usage)  
+* Nucleo project example now Cube compliant and available for Nucleo F401 & L053
+
+########################################################
+# ReleaseNotes: 3.0.0 Beta3
+########################################################
+
+* Changed files headers to be compliant with ST copyright
+* Added VL6180X_SAFE_POLLING_ENTER macro in platform/template/vl6180x_platform.h
+* Changed values returned by GetUpperLimit function
+* Changed VL6180x_RangeData_t structure fields (this has been actually done in 3.0.0 Beta2) : 
+*     - Added rtnAmbRate, rtnRate, rtnConvTime and refConvTime (transfered from RangeFilterResult_t)
+* Changed RangeFilterResult_t structure fields (this has been actually done in 3.0.0 Beta2) :
+*     - Removed refRate, refAmbRate 
+
+########################################################
+# ReleaseNotes: 3.0.0 Beta2
+########################################################
+
+* New directory structure : core, config, platform, example
+* Dmax now clipped to 400 mm
+* Negative offsets now supported
+* Removed any checks on IDENTIFICATION_MODULE_REV MAJOR and MINOR
+* SVN revision number added in all headers
+* STM32F401CubeMXBasic example added
+* simple ranging and als examples added
+* Doxygen documentation re-architectured 
+
+########################################################
+# ReleaseNotes: 2.1.1
+########################################################
+
+* ECE disabled (by default) in extended range (hybrid AF) mode
+* ports/customer directory renamed as ports/extended_range
+
+########################################################
+# ReleaseNotes: 2.1.0
+########################################################
+
+* DmaxSq renamed as Dmax : API finally implements square root operation (aproximation)
+* First implementation of Dmax calculation
+* New error code added : 16 for Ranging Filtered (wrap-around filter)
+* Removed 'filtered' field from RangeFilterResult_t structure (managed in error code)
+* Fixed logging issue present in 2.0.1
+* Updated Doxygen documentation
+
+
+########################################################
+# ReleaseNotes: 2.0.1
+########################################################
+
+* Renamed Dmax as DmaxSq (root square not done in API)
+* Fix signalRate_mcps
+* Doxygen documentation added
+
+
+########################################################
+# ReleaseNotes: 2.0.0
+########################################################
+
+* First implementation
